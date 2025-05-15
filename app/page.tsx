@@ -208,7 +208,7 @@ export default function Home() {
                   key={idx}
                   className="bg-neutral-900 rounded-xl p-6 md:p-8 text-left shadow hover:shadow-purple-300 transition duration-800 cursor-default group"
                 >
-                  <div className="mb-4 w-3 h-3 rounded-full bg-gray-600 group-hover:bg-purple-300 transition duration-300"></div>
+                  <div className="mb-4 w-3 h-3 rounded-full bg-gray-600 group-hover:bg-purple-300 transition duration-800"></div>
                   <h3 className="text-xl font-semibold mb-2">{skill.title}</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">{skill.desc}</p>
                 </div>
