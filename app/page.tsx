@@ -92,7 +92,7 @@ export default function Home() {
           </p>
           <a
             href="#contact"
-            className="mt-4 inline-block bg-purple-500 px-6 py-3 rounded-full font-semibold tracking-wide shadow-lg hover:bg-purple-700 transition-colors duration-300"
+            className="mt-4 inline-block bg-purple-500 px-6 py-3 rounded-full font-semibold tracking-wide shadow hover:bg-purple-700 transition-colors duration-800"
             aria-label="Contact Azain"
           >
             Let’s Create Together
@@ -189,7 +189,7 @@ export default function Home() {
         <section id="skills" className="relative bg-black text-white px-6 py-20 overflow-hidden" aria-label="Skills and Tools">
           <div
             aria-hidden="true"
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[600px] md:h-[600px] rounded-full bg-purple-800 opacity-20 blur-[220px] pointer-events-none"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full bg-purple-800 opacity-20 blur-[220px] pointer-events-none"
           />
 
           <div className="relative max-w-6xl mx-auto text-center">
@@ -206,7 +206,7 @@ export default function Home() {
               ].map((skill, idx) => (
                 <div
                   key={idx}
-                  className="bg-neutral-900 rounded-xl p-6 md:p-8 text-left shadow-md hover:shadow-purple-300 transition duration-500 cursor-default group"
+                  className="bg-neutral-900 rounded-xl p-6 md:p-8 text-left shadow hover:shadow-purple-300 transition duration-800 cursor-default group"
                 >
                   <div className="mb-4 w-3 h-3 rounded-full bg-gray-600 group-hover:bg-purple-300 transition duration-300"></div>
                   <h3 className="text-xl font-semibold mb-2">{skill.title}</h3>
@@ -218,36 +218,37 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="bg-black text-white px-6 py-20" aria-label="Client Testimonials">
-          <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-4xl font-semibold mb-16 tracking-tight">What Clients Say</h2>
-            <div className="grid md:grid-cols-2 gap-12">
-              {[
-                {
-                  quote: "Azain completely transformed our product interface. Clean, intuitive, and exactly what our users needed.",
-                  name: "Brian Canvan",
-                  title: "BSJ, Dota Coach",
-                },
-                {
-                  quote: "The UX overhaul Azain did helped increase our engagement by 40%. Highly recommend his work!",
-                  name: "Arshad Kazi",
-                  title: "CEO, Creatix",
-                },
-              ].map((testimonial, idx) => (
-                <blockquote
-                  key={idx}
-                  className="bg-neutral-900 p-8 rounded-3xl shadow hover:shadow-purple-300 transition-shadow duration-700 cursor-default"
-                >
-                  <p className="text-gray-300 italic mb-6 leading-relaxed">“{testimonial.quote}”</p>
-                  <footer>
-                    <p className="text-white font-semibold">{testimonial.name}</p>
-                    <p className="text-gray-500 text-sm">{testimonial.title}</p>
-                  </footer>
-                </blockquote>
-              ))}
-            </div>
-          </div>
-        </section>
+ <section id="testimonials" className="bg-black text-white px-6 py-20" aria-label="Client Testimonials">
+  <div className="max-w-5xl mx-auto text-center">
+    <h2 className="text-4xl font-semibold mb-16 tracking-tight">What Clients Say</h2>
+    <div className="grid md:grid-cols-2 gap-12">
+      {[
+        {
+          quote: "Azain completely transformed our product interface. Clean, intuitive, and exactly what our users needed.",
+          name: "Brian Canvan",
+          title: "BSJ, Dota Coach",
+        },
+        {
+          quote: "The UX overhaul Azain did helped increase our engagement by 40%. Highly recommend his work!",
+          name: "Arshad Kazi",
+          title: "CEO, Creatix",
+        },
+      ].map((testimonial, idx) => (
+        <blockquote
+          key={idx}
+          className="bg-white/10 backdrop-blur-xl border border-white/10 ring-1 ring-white/5 p-8 rounded-3xl shadow hover:shadow-purple-300 transition-shadow duration-800 cursor-default"
+        >
+          <p className="text-gray-300 italic mb-6 leading-relaxed">“{testimonial.quote}”</p>
+          <footer>
+            <p className="text-white font-semibold">{testimonial.name}</p>
+            <p className="text-gray-400 text-sm">{testimonial.title}</p>
+          </footer>
+        </blockquote>
+      ))}
+    </div>
+  </div>
+</section>
+
 
         {/* Contact Section */}
         <section id="contact" className="bg-black text-white px-6 py-20" aria-label="Contact Azain">
