@@ -9,7 +9,19 @@
     transform: translateY(0);
   }
 }
+@keyframes logo-shine {
+  0% {
+    background-position: -300% 0;
+  }
+  100% {
+    background-position: 300% 0;
+  }
+}
 
+.animate-logo-shine {
+  background-size: 400% auto;
+  animation: logo-shine 12s ease-in-out infinite;
+}
 .animate-fade-up {
   animation: fadeUp 3.5s ease-out forwards;
 }

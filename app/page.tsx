@@ -29,7 +29,7 @@ export default function Home() {
 
             .animate-logo-shine {
               background-size: 400% auto;
-              animation: logo-shine 8s linear infinite;
+              animation: logo-shine 12s linear infinite;
             }
           `}</style>
 
@@ -45,7 +45,7 @@ export default function Home() {
               <li key={href}>
                 <a
                   href={href}
-                  className="hover:text-purple-300 transition-colors duration-300"
+                  className="hover:text-purple-300 transition duration-400 ease-in-out"
                   onClick={(e) => {
                     e.preventDefault();
                     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
@@ -64,40 +64,46 @@ export default function Home() {
         id="home"
       >
         {/* Hero Section */}
-        <section
-          id="home"
-          className="flex flex-col items-center justify-center min-h-screen px-6 text-center space-y-6 md:space-y-10"
-          aria-label="Hero Introduction"
-        >
-          <div
-            aria-hidden="true"
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px] rounded-full bg-purple-800 opacity-20 blur-[220px] pointer-events-none"
-          />
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight max-w-4xl drop-shadow-lg">
-            Hey, I'm{" "}
-            <span className="text-white font-bold">
-              {"Azain".split("").map((char, i) => (
-                <span
-                  key={i}
-                  className="inline-block text-purple-300 animate-fade-up"
-                  style={{ animationDelay: `${i * 0.1}s` }}
-                >
-                  {char}
-                </span>
-              ))}
-            </span>
-          </h1>
-          <p className="text-base sm:text-lg md:text-2xl max-w-3xl text-gray-300 leading-relaxed">
-            UI/UX Designer — crafting minimal, human-first interfaces that blend form and function seamlessly.
-          </p>
-          <a
-            href="#contact"
-            className="mt-4 inline-block bg-purple-500 px-6 py-3 rounded-full font-semibold tracking-wide shadow hover:bg-purple-700 transition-colors duration-800"
-            aria-label="Contact Azain"
+      <section
+  id="home"
+  className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center space-y-6 md:space-y-10 overflow-hidden"
+  aria-label="Hero Introduction"
+>
+  {/* Background Glow */}
+  <div
+    aria-hidden="true"
+    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[600px] max-h-[600px] md:max-w-[800px] md:max-h-[800px] rounded-full bg-purple-800 opacity-20 blur-[200px] pointer-events-none"
+  />
+
+  <div className="relative z-10">
+    <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight max-w-4xl drop-shadow-lg">
+      Hey, I'm{" "}
+      <span className="text-white font-bold">
+        {"Azain".split("").map((char, i) => (
+          <span
+            key={i}
+            className="inline-block text-purple-300 animate-fade-up"
+            style={{ animationDelay: `${i * 0.1}s` }}
           >
-            Let’s Create Together
-          </a>
-        </section>
+            {char}
+          </span>
+        ))}
+      </span>
+    </h1>
+
+    <p className="mt-6 text-base sm:text-lg md:text-2xl max-w-3xl text-gray-300 leading-relaxed">
+      UI/UX Designer — crafting minimal, human-first interfaces that blend form and function seamlessly.
+    </p>
+
+    <a
+      href="#contact"
+      className="mt-8 inline-block bg-purple-500 px-6 py-3 rounded-full font-semibold tracking-wide shadow hover:bg-purple-700 transition-colors duration-800"
+      aria-label="Contact Azain"
+    >
+      Let’s Create Together
+    </a>
+  </div>
+</section>
 
         {/* About Section */}
         <section
@@ -130,7 +136,7 @@ export default function Home() {
               return (
                 <div
                   key={idx}
-                  className="relative flex items-center justify-center bg-gray-400 rounded-lg cursor-pointer shadow-md hover:shadow-purple-300 transition-shadow duration-500 p-2"
+                  className="relative flex items-center justify-center bg-neutral-900 rounded-lg cursor-pointer shadow-md hover:shadow-purple-300 transition-shadow duration-500 p-2"
                   tabIndex={0}
                   aria-label={`Project visual ${idx + 1}`}
                   onClick={() => {
@@ -218,27 +224,41 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
- <section id="testimonials" className="bg-black text-white px-6 py-20" aria-label="Client Testimonials">
-  <div className="max-w-5xl mx-auto text-center">
+<section
+  id="testimonials"
+  className="relative bg-black text-white px-6 py-20 overflow-hidden"
+  aria-label="Client Testimonials"
+>
+  {/* Background Glow */}
+  <div
+    aria-hidden="true"
+    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] md:w-[600px] md:h-[600px] rounded-full bg-purple-700 opacity-15 blur-[280px] pointer-events-none"
+  />
+
+  <div className="max-w-5xl mx-auto text-center relative z-10">
     <h2 className="text-4xl font-semibold mb-16 tracking-tight">What Clients Say</h2>
     <div className="grid md:grid-cols-2 gap-12">
       {[
         {
-          quote: "Azain completely transformed our product interface. Clean, intuitive, and exactly what our users needed.",
+          quote:
+            "Azain completely transformed our product interface. Clean, intuitive, and exactly what our users needed.",
           name: "Brian Canvan",
           title: "BSJ, Dota Coach",
         },
         {
-          quote: "The UX overhaul Azain did helped increase our engagement by 40%. Highly recommend his work!",
+          quote:
+            "The UX overhaul Azain did helped increase our engagement by 40%. Highly recommend his work!",
           name: "Arshad Kazi",
           title: "CEO, Creatix",
         },
       ].map((testimonial, idx) => (
         <blockquote
           key={idx}
-          className="bg-white/10 backdrop-blur-xl border border-white/10 ring-1 ring-white/5 p-8 rounded-3xl shadow hover:shadow-purple-300 transition-shadow duration-800 cursor-default"
+          className="bg-white/5 backdrop-blur-2xl border border-white/10 ring-1 ring-white/10 p-8 rounded-3xl shadow hover:shadow-purple-300 transition-all duration-700 cursor-default"
         >
-          <p className="text-gray-300 italic mb-6 leading-relaxed">“{testimonial.quote}”</p>
+          <p className="text-gray-200 italic mb-6 leading-relaxed text-lg">
+            “{testimonial.quote}”
+          </p>
           <footer>
             <p className="text-white font-semibold">{testimonial.name}</p>
             <p className="text-gray-400 text-sm">{testimonial.title}</p>
@@ -248,6 +268,8 @@ export default function Home() {
     </div>
   </div>
 </section>
+
+
 
 
         {/* Contact Section */}
@@ -268,6 +290,7 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="bg-black border-t border-gray-700 py-6 px-6">
+          
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-400 text-base md:text-sm space-y-6 md:space-y-0">
             <p className="select-none">© 2025 Azain</p>
             <div className="flex flex-wrap gap-10 md:gap-8 justify-center md:justify-start">
